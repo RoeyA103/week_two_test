@@ -14,9 +14,11 @@ def print_player_hand(player:dict) -> None:
     print(f"total value: {game_logic.calculate_hand_value(player['hand'])}")
 
 def print_game_summary(player: dict, dealer: dict):
+    print("game summary")
+    print("-----------------------------\n")
     print(f"player hand:")
     print_player_hand(player)
-    print("\n")
+    print("-----------------------------\n")
     print(f"dealer hand:")
     print_player_hand(dealer)
 

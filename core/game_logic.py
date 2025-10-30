@@ -1,4 +1,14 @@
 from core import player_io ,deck
+# def chose_1_or_11(player=False) -> int:
+#     if player:
+#         while True:
+#             player_answer = input("you got 'A' chose 1 or 11\n:")
+#             if player_answer != '1' and player_answer != '11':
+#                 print('in valid')
+#                 continue
+#             return int(player_answer)
+#     else:    
+#          return 1    
 
 def calculate_hand_value(hand:list[dict]) -> int:
     val = 0
@@ -57,6 +67,8 @@ def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
             elif phand < dhand:
                 return "dealer"
             return "tie"
+        else:
+            return "player"
         
     resolt = inner(deck,player,dealer)
     player_io.print_game_summary(player,dealer)
