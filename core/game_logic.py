@@ -1,14 +1,10 @@
 from core import player_io ,deck
-# def chose_1_or_11(player=False) -> int:
-#     if player:
-#         while True:
-#             player_answer = input("you got 'A' chose 1 or 11\n:")
-#             if player_answer != '1' and player_answer != '11':
-#                 print('in valid')
-#                 continue
-#             return int(player_answer)
-#     else:    
-#          return 1    
+# bonus
+def add_1_or_11(val) -> int:
+    if val + 11 < 22:
+        return 11
+    return 1
+
 
 def calculate_hand_value(hand:list[dict]) -> int:
     val = 0
@@ -17,7 +13,7 @@ def calculate_hand_value(hand:list[dict]) -> int:
         if not rank.isdigit():
             match rank:
                 case 'A':
-                    val += 1
+                    val += add_1_or_11(val)
                 case _ :
                     val += 10  
         else:
